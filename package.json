@@ -5,6 +5,10 @@
   "author": "Malcolm Nihlén <malcolm.nihlen@gmail.com>",
   "description": "A simple wrapper for the CLI version of the Standford NER library.",
   "licence": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scriptcoded/ner-cli"
+  },
   "dependencies": {
     "shelljs": "^0.8.2",
     "tmp-promise": "^1.0.5"
