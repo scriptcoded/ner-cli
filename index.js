@@ -7,6 +7,8 @@ const fs = require('fs')
 const writeFile = util.promisify(fs.writeFile)
 const readFile = util.promisify(fs.readFile)
 
+module.exports.nerPath = path.resolve('./ner')
+
 /**
  * Taken from https://gist.github.com/davidrleonard/2962a3c40497d93c422d1269bcd38c8f
  * Thanks!
@@ -21,7 +23,6 @@ function execAsync (cmd, opts = {}) {
   })
 }
 
-const nerDir = path.resolve('./ner')
 const cmdPattern = (input, output) => `java -mx600m -cp "*;lib/*" edu.stanford.nlp.ie.crf.CRFClassifier -loadClassifier classifiers/english.all.3class.distsim.crf.ser.gz -outputFormat inlineXML -textFile ${input} > ${output}`
 
 const getTag = (text, name) => {
@@ -49,7 +50,7 @@ module.exports.parse = async (text) => {
     outputFile
   )
 
-  shell.cd(nerDir)
+  shell.cd(module.exports.nerPath)
   await execAsync(command, {
     silent: true
   })
