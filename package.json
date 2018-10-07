@@ -1,6 +1,6 @@
 {
   "name": "ner-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "author": "Malcolm Nihlén <malcolm.nihlen@gmail.com>",
   "description": "A simple wrapper for the CLI version of the Standford NER library.",
